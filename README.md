@@ -11,19 +11,19 @@ Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
  - To changhe api port see application.properties
 
-Get project : `git clone https://github.com/keuss/springboot-udev.git`
+Get project : `git clone https://github.com/cgi-paris-fs-comex/udev-springboot.git`
 
 ## Build
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  - See pom for unpack maven dependencies
- - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
+ - OPTIONAL: Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
  
 ## Swagger IU
 
  - http://localhost:8080/api/swagger-ui.html (https://swagger.io/)
  
-## Run with docker
+## Run with docker OPTIONAL
 
  - `docker run -d --name appbook_micro1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
  
@@ -43,7 +43,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  - See src/main/resources/db/runtime.sql for add data at start-up
 
 
-# REDIS cache
+# REDIS cache OPTIONAL
 
  - Only with !dev spring profile (dev mode use spring NoOpCacheManager)
  - With docker container
@@ -69,7 +69,10 @@ docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:
 
 ## Test
 
-Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first.
+ - http://localhost:8080/api/swagger-ui.html
+ 
+ 
+Or use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first.
 
 POST http://localhost:8080/api/books
 
