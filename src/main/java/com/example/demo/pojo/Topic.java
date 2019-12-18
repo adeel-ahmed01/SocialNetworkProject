@@ -24,14 +24,4 @@ public class Topic {
     private String category;
     private List<Comment> commentList;
 
-
-
-
-
-    private List<String> commentList;
-
-
-
-
-
 }
