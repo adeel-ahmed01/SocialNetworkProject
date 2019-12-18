@@ -22,6 +22,5 @@ public class Topic {
     private String body;
     @NotEmpty
     private String category;
-    private List<Comment> commentList;
 
 }
