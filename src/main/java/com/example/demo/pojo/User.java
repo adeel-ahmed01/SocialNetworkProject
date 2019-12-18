@@ -2,10 +2,7 @@ package com.example.demo.pojo;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Data
@@ -14,6 +11,9 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @NotEmpty
+    @Column(unique=true)
     private String email;
     @NotEmpty
     private String nom;
@@ -21,5 +21,9 @@ public class User {
     private String prenom;
     @NotEmpty
     private String password;
+
+/* Ajouter données pour informations profil
+    private String urlPhoto;
+    */
 
 }

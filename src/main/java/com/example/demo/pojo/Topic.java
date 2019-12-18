@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,8 +20,16 @@ public class Topic {
     private String title;
     @NotEmpty
     private String body;
-    private User user;
-    private Category category;
+    @NotEmpty
+    private String category;
+    private List<Comment> commentList;
+
+
+
+
+
+    private List<String> commentList;
+
 
 
 

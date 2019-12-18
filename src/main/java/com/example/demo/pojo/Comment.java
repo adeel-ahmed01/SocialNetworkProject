@@ -7,15 +7,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 
 @Data
 @Entity
-public class Category {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotEmpty
-    private String nom;
+    private String content;
+    @NotEmpty
+    private User author;
+    @NotEmpty
+    private LocalDate date;
+
+
+
+
 
 }
