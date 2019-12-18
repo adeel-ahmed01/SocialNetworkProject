@@ -22,7 +22,9 @@ public class Comment {
     @NotEmpty
     private String content;
     @NotEmpty
-    private User author;
+    private long idAuthor;
+    @NotEmpty
+    private long idTopic;
     @NotEmpty
     private LocalDate date;
 
