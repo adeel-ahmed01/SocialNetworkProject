@@ -30,6 +30,7 @@ public class TopicMapper {
         tJSON.setTitle(topic.getTitle());
         tJSON.setBody(topic.getBody());
         tJSON.setCategory(topic.getCategory());
+        tJSON.setId(topic.getId());
         return tJSON;
     }
 
