@@ -17,7 +17,8 @@ import java.util.List;
 @Slf4j
 @Api(tags = {"Topic"})
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+// Be careful with cross-origin !!
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "topics", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TopicController {
 
