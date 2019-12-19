@@ -1,7 +1,5 @@
 package com.example.demo.helper;
 
-import com.example.demo.pojo.Book;
-import com.example.demo.pojo.BookJSON;
 import com.example.demo.pojo.Topic;
 import com.example.demo.pojo.TopicJSON;
 
@@ -31,6 +29,7 @@ public class TopicMapper {
         tJSON.setTitle(topic.getTitle());
         tJSON.setBody(topic.getBody());
         tJSON.setCategory(topic.getCategory());
+        tJSON.setId(topic.getId());
         return tJSON;
     }
 
