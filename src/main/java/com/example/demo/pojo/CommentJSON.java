@@ -20,6 +20,6 @@ public class CommentJSON implements Serializable {
     private long idTopic;
     @NotNull(message = "Please enter date")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate date;
+    private LocalDate dateComment;
 
 }
