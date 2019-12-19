@@ -18,11 +18,7 @@ public class CommentMapper {
         comment.setContent(commentJSON.getContent());
         comment.setIdAuthor(commentJSON.getIdAuthor());
         comment.setIdTopic(commentJSON.getIdTopic());
-<<<<<<< HEAD
-        comment.setDateComment(commentJSON.getDateComment());
-=======
-        comment.setCommentDate(commentJSON.getDateComment());
->>>>>>> branch 'no-auth' of https://github.com/adeel-ahmed01/SocialNetworkProject/
+        comment.setCommentDate(commentJSON.getCommentDate());
 
         return comment;
     }
@@ -35,7 +31,8 @@ public class CommentMapper {
         commentJSON.setContent(comment.getContent());
         commentJSON.setIdAuthor(comment.getIdAuthor());
         commentJSON.setIdTopic(comment.getIdTopic());
-        commentJSON.setDateComment(comment.getCommentDate());
+        commentJSON.setCommentDate(comment.getCommentDate());
+
         return commentJSON;
     }
 
