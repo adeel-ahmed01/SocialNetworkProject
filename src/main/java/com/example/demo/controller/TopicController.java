@@ -47,4 +47,5 @@ public class TopicController {
 	        // or JPA RollbackException (DB side)
 	        return topicService.addTopic(topic);
 	    }
+	    
 }
