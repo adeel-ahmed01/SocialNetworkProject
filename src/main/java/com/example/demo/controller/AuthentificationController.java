@@ -24,7 +24,7 @@ public class AuthentificationController {
     @ApiOperation(value =  "Verify User")
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     public boolean confirmConnection(@ApiParam(value = "email and password") @RequestBody AuthentificationJSON auth) {
-        return userService.authentify(auth);
+        return userService.identify(auth);
     }
 
 }
