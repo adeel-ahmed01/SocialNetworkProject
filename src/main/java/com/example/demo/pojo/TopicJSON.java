@@ -8,12 +8,12 @@ import java.util.List;
 
 @Data
 public class TopicJSON implements Serializable {
-	private Long id;
+    private Long id;
     @NotEmpty
     private String title;
     @NotEmpty
     private String body;
     @NotEmpty
     private String category;
-    private List<Comment> commentList;
+    private List<CommentJSON> commentList;
 }

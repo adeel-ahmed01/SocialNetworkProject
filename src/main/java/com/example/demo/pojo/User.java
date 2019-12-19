@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotEmpty
-    @Column(unique=true)
+    @Column(unique = true)
     private String email;
     @NotEmpty
     private String nom;
@@ -21,9 +21,5 @@ public class User {
     private String prenom;
     @NotEmpty
     private String password;
-
-/* Ajouter données pour informations profil
-    private String urlPhoto;
-    */
 
 }

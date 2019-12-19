@@ -12,7 +12,7 @@ public class UserJSON implements Serializable {
 
     private int id;
     @NotEmpty
-    @Column(unique=true)
+    @Column(unique = true)
     private String email;
     @NotEmpty
     private String nom;

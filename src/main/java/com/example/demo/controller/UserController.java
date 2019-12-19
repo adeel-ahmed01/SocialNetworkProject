@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.pojo.AuthentificationJSON;
-import com.example.demo.pojo.User;
 import com.example.demo.pojo.UserJSON;
 import com.example.demo.service.UserService;
 import io.swagger.annotations.Api;
@@ -24,8 +22,8 @@ public class UserController {
     UserService userService;
 
     @ApiOperation(value = "Create user")
-    @RequestMapping(method =  RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public UserJSON addUser(@ApiParam (value = "User to add", required = true) @Valid @RequestBody UserJSON user) {
+    @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public UserJSON addUser(@ApiParam(value = "User to add", required = true) @Valid @RequestBody UserJSON user) {
         return userService.createUser(user);
     }
 

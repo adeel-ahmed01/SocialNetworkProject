@@ -25,7 +25,7 @@ public class Comment {
     @NotNull(message = "Please enter topic id")
     private long idTopic;
     @NotNull(message = "Please enter date")
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate commentDate;
 
 }
