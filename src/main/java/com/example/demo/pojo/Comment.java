@@ -13,9 +13,6 @@ import java.time.LocalDate;
 @Entity
 public class Comment {
 
-    /**
-     * Clé primaire
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
