@@ -10,7 +10,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByEmail(String email);
 
-    @Query("SELECT nom FROM USER WHERE email = %:email% AND password = %:password%")
+    @Query("SELECT nom FROM User WHERE email = :email AND password = :password")
     User identify(String email, String password);
 
 }

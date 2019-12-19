@@ -26,7 +26,7 @@ public class CommentService {
     }
 
     public List<CommentJSON> getCommentsByTopic(Long idTopic) {
-        List<Comment> commentList = commentRepository.findByIdTopicOrderByDateDesc(idTopic);
+        List<Comment> commentList = commentRepository.findByIdTopicOrderByCommentDateDesc(idTopic);
         return commentMapper.mapTo(commentList);
     }
 
