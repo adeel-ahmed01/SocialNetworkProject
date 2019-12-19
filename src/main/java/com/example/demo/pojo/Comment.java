@@ -15,9 +15,6 @@ import java.time.LocalDate;
 @Entity
 public class Comment {
 
-    /**
-     * Clé primaire
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,6 +26,6 @@ public class Comment {
     private long idTopic;
     @NotNull(message = "Please enter date")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate dateComment;
+    private LocalDate commentDate;
 
 }

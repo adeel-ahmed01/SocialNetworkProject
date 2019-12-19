@@ -25,6 +25,7 @@ public class TopicMapper {
     public TopicJSON mapTo(Topic topic) {
         Assert.notNull(topic, "The topic must not be null");
         TopicJSON tJSON = new TopicJSON();
+        tJSON.setId(topic.getId());
         tJSON.setTitle(topic.getTitle());
         tJSON.setBody(topic.getBody());
         tJSON.setCategory(topic.getCategory());
