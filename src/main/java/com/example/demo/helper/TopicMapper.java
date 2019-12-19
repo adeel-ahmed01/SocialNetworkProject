@@ -1,7 +1,5 @@
 package com.example.demo.helper;
 
-import com.example.demo.pojo.Book;
-import com.example.demo.pojo.BookJSON;
 import com.example.demo.pojo.Topic;
 import com.example.demo.pojo.TopicJSON;
 
