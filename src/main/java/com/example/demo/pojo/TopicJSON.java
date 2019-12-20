@@ -16,4 +16,6 @@ public class TopicJSON implements Serializable {
     @NotEmpty
     private String category;
     private List<CommentJSON> commentList;
+    @NotEmpty
+    private UserJSON author;
 }

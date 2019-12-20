@@ -21,5 +21,7 @@ public class Topic {
     private String body;
     @NotEmpty
     private String category;
+    @NotEmpty
+    private int idAuthor;
 
 }

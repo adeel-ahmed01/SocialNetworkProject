@@ -20,8 +20,13 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
-    public UserJSON getUser(String email) {
+    public UserJSON getUserByEmail(String email) {
         User user = userRepository.findByEmail(email);
+        return userMapper.mapTo(user);
+    }
+
+    public UserJSON getUserById(long id) {
+        User user = userRepository.selectById(id);
         return userMapper.mapTo(user);
     }
 

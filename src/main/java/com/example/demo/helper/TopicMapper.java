@@ -3,6 +3,7 @@ package com.example.demo.helper;
 import com.example.demo.pojo.Topic;
 import com.example.demo.pojo.TopicJSON;
 import com.example.demo.service.CommentService;
+import com.example.demo.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -16,10 +17,12 @@ public class TopicMapper {
     @Resource
     CommentService commentService;
 
+    @Resource
+    UserService userService;
+
     public Topic mapTo(TopicJSON topicJSON) {
         Assert.notNull(topicJSON, "The topicJSON must not be null");
         Topic t = new Topic();
-        // must not set id !
         t.setTitle(topicJSON.getTitle());
         t.setBody(topicJSON.getBody());
         t.setCategory(topicJSON.getCategory());
@@ -34,6 +37,7 @@ public class TopicMapper {
         tJSON.setBody(topic.getBody());
         tJSON.setCategory(topic.getCategory());
         tJSON.setCommentList(commentService.getCommentsByTopic(topic.getId()));
+        tJSON.setAuthor(userService.getUserById(topic.getId()));
         return tJSON;
     }
 

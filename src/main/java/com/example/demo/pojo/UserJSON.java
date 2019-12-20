@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 public class UserJSON implements Serializable {
 
-    private int id;
+    private long id;
     @NotEmpty
     @Column(unique = true)
     private String email;
