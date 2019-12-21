@@ -17,7 +17,7 @@ import java.util.List;
 @Slf4j
 @Api(tags = {"Comment"})
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "comments", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CommentController {
 

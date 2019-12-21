@@ -42,7 +42,7 @@ public class TopicMapper {
     }
 
     public List<TopicJSON> mapTo(List<Topic> topicList) {
-        Assert.notNull(topicList, "The bookList must not be null");
+        Assert.notNull(topicList, "The topicList must not be null");
         return topicList.stream().map(this::mapTo).collect(Collectors.toList());
     }
 }

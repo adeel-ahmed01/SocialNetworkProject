@@ -1,6 +1,6 @@
-INSERT INTO public.user(id, email, nom, prenom, password) VALUES(0, 'adeel@cgi.com', 'adeel', 'ahmed', '123');
-INSERT INTO public.user(id, email, nom, prenom, password) VALUES(1, 'steven@cgi.com', 'guillomet', 'steven', '456');
-INSERT INTO public.user(id, email, nom, prenom, password) VALUES(2, 'valentin@cgi.com', 'devernois', 'valentin', '789');
+INSERT INTO public.user(id, email, nom, prenom, password) VALUES(0, 'adeel@cgi.com', 'AHMED', 'Adeel', '123');
+INSERT INTO public.user(id, email, nom, prenom, password) VALUES(1, 'steven@cgi.com', 'GUILLOMET', 'Steven', '456');
+INSERT INTO public.user(id, email, nom, prenom, password) VALUES(2, 'valentin@cgi.com', 'DEVERNOIS', 'Valentin', '789');
 
 INSERT INTO public.topic(id, title, body, category, id_author) VALUES(0, 'Soiree boisson', 'Rendez-vous le samedi soir a 18h pour faire le plein de biere', 'AFTERWORK', 0);
 INSERT INTO public.topic(id, title, body, category, id_author) VALUES(1, 'Rapport financier Q4-2019', 'Toujours aller plus loin', 'FINANCE', 2);

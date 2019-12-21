@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 
 @RestController
 @Api(tags = {"Login"})
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "login")
 public class AuthentificationController {
 

@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 
 @Api(tags = "User")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "profile", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
