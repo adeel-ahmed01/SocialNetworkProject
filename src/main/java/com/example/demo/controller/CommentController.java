@@ -24,12 +24,15 @@ public class CommentController {
     @Resource
     private CommentService commentService;
 
+
     @ApiOperation(value = "Get all Comments")
     @RequestMapping(method = RequestMethod.GET)
     public List<CommentJSON> getAll() {
         return commentService.getAllComments();
     }
 
+
+    // first commit
     @ApiOperation(value = "Add Comment", response = CommentJSON.class)
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
