@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface TopicRepository extends JpaRepository<Topic, Long> {
-
+	
     @Query("SELECT t FROM Topic t WHERE t.title LIKE %:title%")
     List<Topic> findByTitle(String title);
 }
