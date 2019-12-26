@@ -7,31 +7,31 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CustomUserDetails implements UserDetails {
 
     private String email;
     private String password;
+    private List<SimpleGrantedAuthority> accesses;
 
-    public CustomUserDetails(String email) {
-        this.email = email;
-        // Can implement authorities
-    }
-
-    public CustomUserDetails(User byEmail) {
-        this.email = byEmail.getEmail();
-        this.password = byEmail.getPassword();
-        // Can implement authorities
+    public CustomUserDetails(User user) {
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+        this.accesses = Arrays.stream(user.getAccess().split(","))
+                                .map(SimpleGrantedAuthority::new)
+                                .collect(Collectors.toList());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ADMIN"));
+        return accesses;
     }
 
     @Override
     public String getPassword() {
-        return "123";
+        return password;
     }
 
     @Override
