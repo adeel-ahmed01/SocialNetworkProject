@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 @Slf4j
-@SpringBootApplication(exclude = {RedisRepositoriesAutoConfiguration.class, SecurityAutoConfiguration.class})
+@SpringBootApplication(exclude = {RedisRepositoriesAutoConfiguration.class})
 public class DemoApplication {
 
     public static void main(String[] args) {
