@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.CustomUserDetails;
+import com.example.demo.security.UserPrincipal;
 import com.example.demo.pojo.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,6 @@ public class UserDetailsServiceImpl implements org.springframework.security.core
 
         User user = userRepository.findByEmail(s);
 
-        return new CustomUserDetails(user);
+        return new UserPrincipal(user);
     }
 }

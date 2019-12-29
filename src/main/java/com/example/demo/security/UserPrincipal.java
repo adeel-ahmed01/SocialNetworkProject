@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.security;
 
 import com.example.demo.pojo.User;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,13 +10,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CustomUserDetails implements UserDetails {
+public class UserPrincipal implements UserDetails {
 
     private String email;
     private String password;
     private List<SimpleGrantedAuthority> accesses;
 
-    public CustomUserDetails(User user) {
+    public UserPrincipal(User user) {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.accesses = Arrays.stream(user.getAccess().split(","))
