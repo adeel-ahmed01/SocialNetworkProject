@@ -27,7 +27,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 
     /* Trigger when we issue POST request to /login
-    We also need to pass in {"username":"dan", "password":"dan123"} in the request body
+        We also need to pass in
+                                {
+                                   "username":"username",
+                                   "password":"password"
+                                }
+        in the request body
      */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
