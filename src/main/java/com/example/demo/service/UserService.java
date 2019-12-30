@@ -1,14 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.helper.UserMapper;
-import com.example.demo.pojo.AuthentificationJSON;
-import com.example.demo.pojo.User;
-import com.example.demo.pojo.UserJSON;
+import com.example.demo.pojo.*;
 import com.example.demo.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -40,4 +39,8 @@ public class UserService {
         return userMapper.mapTo(user);
     }
 
+    public List<UserJSON> getAllUsers() {
+        List<User> userList = userRepository.findAll();
+        return userMapper.mapTo(userList);
+    }
 }
