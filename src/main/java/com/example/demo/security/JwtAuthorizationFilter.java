@@ -7,7 +7,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import javax.servlet.FilterChain;
@@ -22,9 +21,9 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
     private UserRepository userRepository;
 
-    public JwtAuthorizationFilter(AuthenticationManager authenticationManager, AuthenticationEntryPoint authenticationEntryPoint, UserRepository userRepository) {
+    public JwtAuthorizationFilter(AuthenticationManager authenticationManager, UserRepository userRepository) {
 
-        super(authenticationManager, authenticationEntryPoint);
+        super(authenticationManager);
         this.userRepository = userRepository;
 
     }
@@ -34,21 +33,21 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
         String header = request.getHeader(JwtProperties.HEADER_STRING);
 
-       if(header==null || !header.startsWith(JwtProperties.TOKEN_PREFIX)){
-           chain.doFilter(request,response);
-           return;
-       }
+        if (header == null || !header.startsWith(JwtProperties.TOKEN_PREFIX)) {
+            chain.doFilter(request, response);
+            return;
+        }
 
         Authentication authentication = getEmailPasswordAuthentication(request);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        chain.doFilter(request,response);
+        chain.doFilter(request, response);
 
     }
 
     private Authentication getEmailPasswordAuthentication(HttpServletRequest request) {
         String token = request.getHeader(JwtProperties.HEADER_STRING)
-                .replace(JwtProperties.TOKEN_PREFIX,"");
+                .replace(JwtProperties.TOKEN_PREFIX, "");
 
         if (token != null) {
             // parse the token and validate it
