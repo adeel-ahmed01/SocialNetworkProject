@@ -26,13 +26,13 @@ public class TopicController {
     private TopicService topicService;
 
     @ApiOperation(value = "Get all Topics")
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "all", method = RequestMethod.GET)
     public List<TopicJSON> getAll() {
         return topicService.getAllTopics();
     }
 
     @ApiOperation(value = "Add Topic", response = TopicJSON.class)
-    @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "add", method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public TopicJSON addTopic(@ApiParam(value = "Topic to Add", required = true) @Valid @RequestBody TopicJSON topic) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty

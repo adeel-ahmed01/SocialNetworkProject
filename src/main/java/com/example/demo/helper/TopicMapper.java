@@ -34,6 +34,7 @@ public class TopicMapper {
         TopicJSON tJSON = new TopicJSON();
         tJSON.setId(topic.getId());
         tJSON.setTitle(topic.getTitle());
+        tJSON.setPostDate(topic.getPostDate());
         tJSON.setBody(topic.getBody());
         tJSON.setCategory(topic.getCategory());
         tJSON.setCommentList(commentService.getCommentsByTopic(topic.getId()));
@@ -43,6 +44,8 @@ public class TopicMapper {
 
     public List<TopicJSON> mapTo(List<Topic> topicList) {
         Assert.notNull(topicList, "The topicList must not be null");
-        return topicList.stream().map(this::mapTo).collect(Collectors.toList());
+        return topicList.stream()
+                .map(this::mapTo)
+                .collect(Collectors.toList());
     }
 }

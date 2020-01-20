@@ -29,14 +29,9 @@ public class UserService {
         return userMapper.mapTo(user);
     }
 
-    public boolean identify(AuthentificationJSON auth) {
-        User user = userRepository.identify(auth.getEmail(), auth.getPassword());
-        return (user != null);
-    }
-
-    public UserJSON createUser(UserJSON userJSON) {
-        User user = userRepository.save(userMapper.mapTo(userJSON));
-        return userMapper.mapTo(user);
+    public UserJSON createUser(User user) {
+        User insertedUser = userRepository.save(user);
+        return userMapper.mapTo(insertedUser);
     }
 
     public List<UserJSON> getAllUsers() {

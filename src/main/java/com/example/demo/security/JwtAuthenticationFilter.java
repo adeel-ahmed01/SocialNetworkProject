@@ -29,7 +29,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     /* Trigger when we issue POST request to /login
         We also need to pass in
                                 {
-                                   "username":"username",
+                                   "email":"email",
                                    "password":"password"
                                 }
         in the request body
@@ -37,7 +37,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
 
-        // Grab credentials and map them to login viewmodel
+        // Grab credentials and map them to login view
         LoginView credentials = null;
         try {
             credentials = new ObjectMapper().readValue(request.getInputStream(), LoginView.class);
@@ -70,5 +70,11 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         // Add token in response
         response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX +  token);
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(
+                "{\"" + JwtProperties.HEADER_STRING + "\":\"" + token + "\"}"
+        );
     }
 }

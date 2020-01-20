@@ -21,6 +21,6 @@ public class User {
     private String prenom;
     @NotEmpty
     private String password;
-    private String access;
+    private String access = "ROLE_USER";
 
 }
